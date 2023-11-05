@@ -1,24 +1,24 @@
-# README
+# Blog Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Create a blog on Ruby on Rails based on [Ruby on Rails guides](https://guides.rubyonrails.org/getting_started.html) with [extra comment validation](https://discuss.rubyonrails.org/t/railsguides-getting-started-with-rails-add-comment-validation/83406/3). :)
 
-Things you may want to cover:
+## Specification
 
-* Ruby version
+- Ruby version 3.2.2
+- Rails version 7.1.1
+- Sqlite for development
 
-* System dependencies
+## How to run?
 
-* Configuration
+- Clone the repository
+- Run commands below step by step
+```bash
+bundle install
 
-* Database creation
+# create database and tables
+rails db:create
+rails db:migrate
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# start rails server
+rails server
+```

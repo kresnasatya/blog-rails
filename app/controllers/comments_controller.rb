@@ -5,11 +5,6 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     @comment = @article.comments.new(comment_params)
 
-    unless @comment.valid?
-      @commenter_errors = @comment.errors.full_messages_for(:commenter)
-      @body_errors = @comment.errors.full_messages_for(:body)
-    end
-
     if @comment.save
       redirect_to article_path(@article)
     else

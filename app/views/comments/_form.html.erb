@@ -2,23 +2,23 @@
     <p>
         <%= form.label :commenter %>
         <%= form.text_field :commenter %>
-        <% if @commenter_errors.present? %>
-            <div class="errors">
-            <% @commenter_errors.each do |error| %>
-                <p class="error-message"><%= error %></p>
+        <% if @comment.errors.any? %>
+            <% @comment.errors.full_messages_for(:commenter).each do |message| %>
+                <div>
+                    <%= message %>
+                </div>
             <% end %>
-            </div>
         <% end %>
     </p>
     <p>
         <%= form.label :body %>
         <%= form.text_area :body %>
-        <% if @body_errors.present? %>
-            <div class="errors">
-            <% @body_errors.each do |error| %>
-                <p class="error-message"><%= error %></p>
+        <% if @comment.errors.any? %>
+            <% @comment.errors.full_messages_for(:body).each do |message| %>
+                <div>
+                    <%= message %>
+                </div>
             <% end %>
-            </div>
         <% end %>
     </p>
     <p>

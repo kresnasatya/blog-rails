@@ -1,0 +1,31 @@
+<%= form_with model: [ @article, @article.comments.build ] do |form| %>
+    <p>
+        <%= form.label :commenter %>
+        <%= form.text_field :commenter %>
+        <% if @commenter_errors.present? %>
+            <div class="errors">
+            <% @commenter_errors.each do |error| %>
+                <p class="error-message"><%= error %></p>
+            <% end %>
+            </div>
+        <% end %>
+    </p>
+    <p>
+        <%= form.label :body %>
+        <%= form.text_area :body %>
+        <% if @body_errors.present? %>
+            <div class="errors">
+            <% @body_errors.each do |error| %>
+                <p class="error-message"><%= error %></p>
+            <% end %>
+            </div>
+        <% end %>
+    </p>
+    <p>
+        <%= form.label :status %><br>
+        <%= form.select :status, Visible::VALID_STATUSES, selected: 'public' %>
+    </p>
+    <p>
+        <%= form.submit %>
+    </p>
+<% end %>
